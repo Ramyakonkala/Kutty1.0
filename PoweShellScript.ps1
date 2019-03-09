@@ -1,4 +1,4 @@
-$Server   = "ggku4sys152"
+$Server   = "172.16.0.126"
 $User     = "ggktech\ramya.konkala"
 $Password = "Welcome2"
 

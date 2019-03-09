@@ -16,11 +16,11 @@ engine.setProperty('volume', 10.0)
 rate = engine.getProperty('rate')
 engine.setProperty('rate', rate - 25)
 
-greetings = ['hey there', 'hello', 'hi', 'Hai', 'hey!', 'hey','hi kutty']
+greetings = ['hey there', 'hello', 'hi', 'Hai', 'hey!', 'hey','hi Kutty']
 question = ['how are you', 'How are you doing']
-responses = ['Okay', "I'm fine"]
+responses = ["I'm doing great!"]
 var1 = ['who made you', 'who created you']
-var2 = ['I_was_created_by_Ramya_right_in_his_computer.', 'Edward', 'Some_guy_whom_i_never_got_to_know.']
+var2 = ['I_was_created_by_Ramya_right_in_his_computer.', 'Ramya Konkala', 'Some_guy_whom_i_never_got_to_know.']
 var3 = ['what time is it', 'what is the time', 'time']
 var4 = ['who are you', 'what is you name']
 cmd1 = ['open browser', 'open google']
@@ -30,10 +30,10 @@ rdp = ['connect to rdp','connect rdp']
 openTFS = ['open tfs']
 cmd2 = ['play music', 'play songs', 'play a song', 'open music player']
 cmd3 = ['tell a joke', 'tell me a joke', 'say something funny', 'tell something funny']
-jokes = ['Can a kangaroo jump higher than a house Of course, a house doesn’t jump at all.', 'My dog used to chase people on a bike a lot. It got so bad, finally I had to take his bike away.', 'Doctor: Im sorry but you suffer from a terminal illness and have only 10 to live.Patient: What do you mean, 10? 10 what? Months? Weeks?!"Doctor: Nine.']
+jokes = ['Why did the nurse need a red pen at work? In case she needed to draw blood. Hahaha! Isnt that funny.']#,'Can a kangaroo jump higher than a house Of course, a house doesn’t jump at all.', 'My dog used to chase people on a bike a lot. It got so bad, finally I had to take his bike away.', 'Doctor: Im sorry but you suffer from a terminal illness and have only 10 to live.Patient: What do you mean, 10? 10 what? Months? Weeks?!"Doctor: Nine.']
 cmd4 = ['open YouTube', 'I want to watch a video','wanna watch a video']
 cmd5 = ['tell me the weather', 'weather', 'what about the weather']
-cmd6 = ['exit', 'close', 'goodbye', 'nothing']
+cmd6 = ['ok good bye','exit', 'close', 'goodbye', 'nothing']
 cmd7 = ['what is your color', 'what is your colour', 'your color', 'your color?']
 colrep = ['Right now its rainbow', 'Right now its transparent', 'Right now its non chromatic']
 cmd8 = ['what is you favourite colour', 'what is your favourite color']
@@ -53,22 +53,26 @@ while True:
 				print(random_greeting)
 				engine.say(random_greeting)
 				engine.runAndWait()
+			elif r.recognize_google(audio) in ['that is really funny']:
+				print('thank you')
+				engine.say('thank you')
+				engine.runAndWait()
 			elif r.recognize_google(audio) in cmd3:
 				jokrep = random.choice(jokes)
 				print(jokrep)
 				engine.say(jokrep)
 				engine.runAndWait()
 			elif r.recognize_google(audio) in rdp:
-				engine.say("Please wait until connection is established.")
-				subprocess.call([r'C:\Users\madhurya.nune\Desktop\kutty\RDPConnection.bat'])
+				# engine.say("Please wait until connection is established.")
+				subprocess.call([r'C:\Users\ramya.konkala\Desktop\kutty\RDPConnection.bat'])
 			elif r.recognize_google(audio) in cmd1:
 				webbrowser.open('www.google.com')
 			elif r.recognize_google(audio) in customCmd1:
 				webbrowser.open('www.gmail.com')
 			# runScript
 			elif r.recognize_google(audio) in runScript:
-				engine.say("Please wait unitl connection is established.")
-				subprocess.call([r'C:\Users\ramya.konkala\Desktop\ConnectNetExtender.bat'])						
+				# engine.say("Please wait unitl connection is established.")
+				subprocess.call([r'C:\Users\ramya.konkala\Desktop\kutty\NetExtenderBatch.bat'])						
 			elif r.recognize_google(audio) in openTFS:
 				webbrowser.open('https://hgscolibrium.visualstudio.com/')
 			elif r.recognize_google(audio) in question:
@@ -76,7 +80,7 @@ while True:
 				engine.runAndWait()
 				print('I am fine')
 			elif r.recognize_google(audio) in var1:
-				engine.say('I was made by edward')
+				engine.say('I was made by Ramya')
 				engine.runAndWait()
 				reply = random.choice(var2)
 				print(reply)
